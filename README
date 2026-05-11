@@ -1,0 +1,68 @@
+总计 156
+-rw-rw-r-- 1 gkwang gkwang   216  5月11日 14:23 aliyun.sources			# 阿里云的源代码源
+-rw-rw-r-- 1 gkwang gkwang 30635  5月 9日 13:25 all.packages			# 可能会用到的所有安装包
+-rw-rw-r-- 1 gkwang gkwang  4436  5月11日 16:36 dockerfile			# dockerfile
+-rw-rw-r-- 1 gkwang gkwang 53821  5月 9日 11:26 installed_packages.txt		# 在debian13宿主机中已安装的包，可作为参照
+-rw-rw-r-- 1 gkwang gkwang 52332  5月 9日 11:26 packages_list.txt		# 与all.packages相同，不过多了版本号
+-rw-rw-r-- 1 gkwang gkwang     0  5月11日 16:49 README				# 本文件
+drwxrwxr-x 5 gkwang gkwang  4096  5月 9日 16:05 workspace			# 内核编译测试的工作目录
+
+
+# 本库是制作gkwang-dev-env docker环境的目录
+
+1. 获取当前宿主机的安装包
+```bash
+# 以简洁的 "包名 版本号" 格式输出
+dpkg -l | awk '/^ii/ {print $2, $3}' > packages_list.txt
+
+# 生成可用于在新机器上批量恢复的配置文件
+dpkg --get-selections > installed_packages.txt
+```
+
+2. 安装docker
+```bash
+# Debian/Ubuntu 环境一键安装命令
+sudo apt update && sudo apt install -y docker.io
+
+sudo usermod -aG docker $USER
+```
+
+3. 构建docker
+```bash
+sudo docker build -t gkwang-dev-env:latest .
+```
+
+4. 打包docker
+```bash
+sudo docker save -o gkwang-dev-env.tar gkwang-dev-env:latest
+```
+
+5. 载入docker
+```bash
+sudo docker load -i gkwang-dev-env.tar
+```
+
+6. 准备kernel
+```bash
+# 在宿主机加目录下创建Work
+mkdir Work
+cd Work
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/akpm/mm.git
+```
+
+6. 运行docker
+```bash
+sudo docker run -it --rm --hostname test -v /home/gkwang/Work:/home/gkwang/Work gkwang-dev-env:latest
+
+# 另一个终端也可以执行
+sudo docker exec -it <docker-id> bash -l
+```
+
+7. 删除docker和镜像
+```bash
+sudo docker ps -a
+sudo docker rm <docker-id>
+
+sudo docker images
+sudo docker rmi <image-id>
+```

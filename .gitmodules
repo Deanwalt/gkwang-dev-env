@@ -1,0 +1,9 @@
+[submodule ".vim/plugged/git-blame.vim"]
+	path = .vim/plugged/git-blame.vim
+	url = https://github.com/zivyangll/git-blame.vim.git
+[submodule ".vim/plugged/vim-gitgutter"]
+	path = .vim/plugged/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".vim/plugged/vim-sensible"]
+	path = .vim/plugged/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git

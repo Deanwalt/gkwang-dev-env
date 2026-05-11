@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/gkwang/Work/MM-develop/view/asterinas'
+let g:netrw_dirhist_3='/home/gkwang/Work/MM-develop/asterinas/kernel/src/vm/vmo'
+let g:netrw_dirhist_2='/home/gkwang/Work/MM-develop/CortenMM-Artifact/cortenmm-adv'
+let g:netrw_dirhist_1='/home/gkwang/Work/MM-develop/CortenMM-Artifact/cortenmm-rw'
+let g:netrw_dirhist_0='/home/gkwang/Extra/kernel-study/source/view/main-linux'
+let g:netrw_dirhist_9='/home/gkwang/Extra/kernel-study/source/view/linux-2.6.32.41/drivers/watchdog'
+let g:netrw_dirhist_8='/home/gkwang/Extra/kernel-study/source/view/openEuler-kernel'
+let g:netrw_dirhist_7='/home/gkwang/Test/log-test/main-linux'
+let g:netrw_dirhist_6='/home/gkwang/Extra/kernel-study/source/view/openEuler-kernel'
+let g:netrw_dirhist_5='/home/gkwang/Work/linux-2.6.32-696.el6'
