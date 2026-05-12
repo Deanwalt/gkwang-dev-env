@@ -175,6 +175,7 @@ libncurses-dev \
 libssl-dev \
 universal-ctags \
 sudo \
+liburing-dev \
     && apt-get -y build-dep linux \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
