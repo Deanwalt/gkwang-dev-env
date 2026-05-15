@@ -112,7 +112,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export SOURCE=/home/gkwang/Work/kernel-study/source/view/
+export SOURCE=/home/gkwang/Work/kernel-archive/source/
+export VIEW=/home/gkwang/Work/kernel-archive/view/
 export HISTTIMEFORMAT="%F %T "
 export PATH=/home/gkwang/.myapp/:$PATH
 
