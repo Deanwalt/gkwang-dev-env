@@ -52,7 +52,7 @@ git clone git://git.kernel.org/pub/scm/linux/kernel/git/akpm/mm.git
 
 6. 运行docker
 ```bash
-sudo docker run -it --rm --hostname test -v /home/gkwang/Work:/home/gkwang/Work gkwang-dev-env:latest
+sudo docker run -d --hostname test -v /home/gkwang/Work:/home/gkwang/Work gkwang-dev-env:latest
 
 # 另一个终端也可以执行
 sudo docker exec -it <docker-id> bash -l

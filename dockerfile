@@ -176,6 +176,7 @@ libssl-dev \
 universal-ctags \
 sudo \
 liburing-dev \
+tini \
     && apt-get -y build-dep linux \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -213,7 +214,8 @@ COPY --chown=gkwang:gkwang dockerfile installed_packages.txt packages_list.txt /
 # COPY --chown=gkwang:gkwang mm.tar.gz /home/gkwang/Data
  
 COPY --chown=gkwang:gkwang workspace/ /home/gkwang/TestKits/workspace
+COPY --chown=gkwang:gkwang server.py /home/gkwang/.myapp/
 
 # 第4步：设置容器启动时的默认行为
-# 当容器启动时，默认打开一个 shell
-CMD ["/bin/bash", "-l"]
+ENTRYPOINT ["tini", "--"]
+CMD ["python3", "/home/gkwang/.myapp/server.py", "10025", "--directory", "/home/gkwang/Work"]
