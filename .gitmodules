@@ -7,3 +7,6 @@
 [submodule ".vim/plugged/vim-sensible"]
 	path = .vim/plugged/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "byte-unixbench"]
+	path = byte-unixbench
+	url = https://github.com/kdlucas/byte-unixbench.git

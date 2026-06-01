@@ -218,6 +218,7 @@ COPY --chown=gkwang:gkwang dockerfile installed_packages.txt packages_list.txt /
 # COPY --chown=gkwang:gkwang mm.tar.gz /home/gkwang/Data
  
 COPY --chown=gkwang:gkwang workspace/ /home/gkwang/TestKits/workspace
+COPY --chown=gkwang:gkwang byte-unixbench/ /home/gkwang/TestKits/byte-unixbench
 COPY --chown=gkwang:gkwang server.py /home/gkwang/.myapp/
 
 # 第4步：设置容器启动时的默认行为
