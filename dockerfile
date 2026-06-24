@@ -219,7 +219,9 @@ COPY --chown=gkwang:gkwang dockerfile installed_packages.txt packages_list.txt /
  
 COPY --chown=gkwang:gkwang workspace/ /home/gkwang/TestKits/workspace
 COPY --chown=gkwang:gkwang byte-unixbench/ /home/gkwang/TestKits/byte-unixbench
-COPY --chown=gkwang:gkwang server.py /home/gkwang/.myapp/
+COPY --chown=gkwang:gkwang apps/server.py /home/gkwang/.myapp/
+COPY --chown=gkwang:gkwang apps/srcindex/ /home/gkwang/.myapp/srcindex/
+COPY --chown=gkwang:gkwang apps/srcindex/srcindex.conf /etc/
 
 # 第4步：设置容器启动时的默认行为
 ENTRYPOINT ["tini", "--"]

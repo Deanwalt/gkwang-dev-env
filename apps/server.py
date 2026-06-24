@@ -60,6 +60,9 @@ def main():
     parser.add_argument('--bind', '-b', default='0.0.0.0')
     args = parser.parse_args()
 
+    # 执行添加的初始化
+    os.system("/home/gkwang/.myapp/initall")
+
     os.chdir(args.directory)
     server = HTTPServer((args.bind, args.port), TextViewHandler)
     server.serve_forever()

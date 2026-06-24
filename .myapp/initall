@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 这里放容器启动后的一些初始化操作
+
+/home/gkwang/.myapp/srcindex/update_index.sh &
