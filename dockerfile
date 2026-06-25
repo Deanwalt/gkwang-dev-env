@@ -181,6 +181,7 @@ debootstrap \
 ssh \
 python3-jsonschema \
 libfuse-dev \
+inotify-tools \
     && apt-get -y build-dep linux \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
